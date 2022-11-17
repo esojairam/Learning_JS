@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+    <style>
+        body{
+            font: normal 20pt Arial;
+            background:darkcyan;
+        }
+        input{
+            font:normal 20pt Arial;
+            width:100px;
+        }
+        div#res{
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora Simples</h1>
+    <input type="number" name="n1" id="n1" placeholder="1º Número">
+    <input type="number" name="n2" id="n2" placeholder="2º Número">
+    <input type="button" value="Somar" onclick="somar()">
+    <input type="button" value="Subtrair" onclick="subtrair()">
+    <input type="button" value="Multiplicar" onclick="multiplicar()">
+    <input type="button" value="Dividir" onclick="dividir()">
+
+    <div id="res">RESULTADO</div>
+    <script>
+        function somar(){
+            var tn1=document.getElementById('n1');
+            var tn2=document.querySelector('input#n2');
+            var res=document.getElementById('res');
+            var n1=Number.parseInt(tn1.value);
+            var n2=Number(tn2.value);
+            var sum=n1+n2;
+            res.innerHTML=`A soma entre ${n1} e ${n2} é igual a <strong>${sum}</strong>`;
+        }
+        function subtrair(){
+           var tn1=window.document.getElementById('n1');
+           var tn2=document.getElementById('n2');
+           var res=document.getElementById('res');
+           var n1=Number.parseInt(tn1.value);
+           var n2=Number(tn2.value);
+           var sub=n1-n2;
+           res.innerHTML=`A subtração entre ${n1} e ${n2} é igual a <strong>${sub}</strong>`;
+        }
+        function multiplicar(){
+            var tn1=document.querySelector("input#n1");
+            var tn2=document.querySelector('input#n2');
+            var res=document.querySelector('div#res');
+            var mult=(tn1=Number(tn1.value))*(tn2=Number(tn2.value))
+            res.innerHTML=`A multiplicação entre ${tn1} e ${tn2} é igual a <strong>${mult}</strong>`;
+        }
+        function dividir(){
+            var n1=Number(document.getElementById('n1').value);
+            var n2=Number(document.getElementById('n2').value);
+            var res=document.getElementById('res');
+            var div=n1/n2;
+            res.innerHTML=`A divisão entre ${n1} e ${n2} é igual a <strong>${div}</strong>`;
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background:rgb(68, 125, 199);
+            color:white;
+            font:normal 18pt Arial;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="no">Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p name="teste">Apendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+    <div id="oi">Testando o Query Selector com Id</div>
+    <div class="oi2">Testando o Query Selector com Classe</div>
+
+    <script>
+        
+        var corpo=window.document.body;
+        var p1=document.getElementsByTagName('p')[0];
+        window.document.write(p1.innerText+'<br>');
+        window.document.write(p1.innerHTML);
+        p1.style.color='orange';
+        corpo.style.background='black';
+        var d=window.document.getElementById('msg');
+        d.style.background='green';
+        d.innerText='Aguardando ...';
+        var t=document.getElementsByName('teste')[0];
+        t.style.color='pink';
+        var n=document.getElementsByClassName('no')[0];
+        n.style.color='lightblue';
+        var oi=document.querySelector('div#oi');/* a # é para id //// o . é para classe*/
+        oi.style.background='blue';
+        var oi2=document.querySelector('div.oi2');
+        oi2.style.background='orange';
+
+    </script>
+    
+</body>
+</html>

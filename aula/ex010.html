@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pais</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    Digite o país em que vive: <input type="text" name="nacio" id="nacio" >
+    <input type="button" value="Verificar" onclick="verifica()">
+    <div id="res"></div>
+
+    <script>
+        function verifica(){
+            var nacio=String(document.getElementById('nacio').value);
+            var res=document.getElementById('res');
+            if(nacio=='Brasil' || nacio=='brasil' || nacio=='BRASIL'){
+                res.innerHTML=`<p>Você vive no <strong>${nacio}</strong> portanto é <strong>Brasileiro!</strong></p>`;
+            }else{
+                res.innerHTML=`<p>Você vive no <strong>${nacio}</strong> portanto é <strong>Estrangeiro!</strong></p>`;
+            }
+            
+        }
+    </script>
+</body>
+</html>
